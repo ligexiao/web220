@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Sticky Footer Navbar Template for Bootstrap</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/sticky-footer-navbar.css" rel="stylesheet">
+    <style>
+    .navbar-width {
+        width:188px;
+        height:120px;
+        background:#00AEEB;
+    } 
+    .navbar-header {
+        width:380px;
+        height:120px;
+        background:#00AEEB;
+    } 
+    .navbar-text-div {
+        padding-top:73px;
+        padding-left:63px;
+    } 
+    .navbar-text {
+        color: #FFFFFF;
+        font-size: larger;
+    } 
+    </style>
+    <script src="js/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            // set up hover panels
+            // although this can be done without JavaScript, we've attached these events
+            // because it causes the hover to be triggered when the element is tapped on a touch device
+            $('.hover').hover(function(){
+                $(this).addClass('flip');
+            },function(){
+                $(this).removeClass('flip');
+            });
+        });
+    </script>
+    <style>
+        .panel {
+            margin: 0 auto;
+            float: left;
+            left: 104px;
+            width: 320px;
+            height: 480px;  
+            margin-right: 20px;
+            position: relative;
+            font-size: .8em;
+            -webkit-perspective: 600px;
+            -moz-perspective: 600px;
+        }
+        /* -- make sure to declare a default for every property that you want animated -- */
+        /* -- general styles, including Y axis rotation -- */
+        .panel .front {
+            position: absolute;
+            top: 0;
+            z-index: 900;
+            width: inherit;
+            height: inherit;
+            text-align: center;
+            -webkit-transform: rotateX(0deg) rotateY(0deg);
+            -webkit-transform-style: preserve-3d;
+            -webkit-backface-visibility: hidden;
+            -moz-transform: rotateX(0deg) rotateY(0deg);
+            -moz-transform-style: preserve-3d;
+            -moz-backface-visibility: hidden;
+            /* -- transition is the magic sauce for animation -- */
+            -o-transition: all .4s ease-in-out;
+            -ms-transition: all .4s ease-in-out;
+            -moz-transition: all .4s ease-in-out;
+            -webkit-transition: all .4s ease-in-out;
+            transition: all .4s ease-in-out;
+        }
+        .panel.flip .front {
+            z-index: 900;
+            -webkit-transform: rotateY(180deg);
+            -moz-transform: rotateY(180deg);
+        }
+        .panel .back {
+            position: absolute;
+            top: 0;
+            z-index: 800;
+            width: inherit;
+            height: inherit;
+            -webkit-transform: rotateY(-180deg);
+            -webkit-transform-style: preserve-3d;
+            -webkit-backface-visibility: hidden;
+ 
+            -moz-transform: rotateY(-180deg);
+            -moz-transform-style: preserve-3d;
+            -moz-backface-visibility: hidden;
+            /* -- transition is the magic sauce for animation -- */
+            -o-transition: all .4s ease-in-out;
+            -ms-transition: all .4s ease-in-out;
+            -moz-transition: all .4s ease-in-out;
+            -webkit-transition: all .4s ease-in-out;
+            transition: all .4s ease-in-out;
+        }
+        .panel.flip .back {
+            z-index: 1000;
+            -webkit-transform: rotateX(0deg) rotateY(0deg);
+            -moz-transform: rotateX(0deg) rotateY(0deg);
+        }
+    </style>
+  </head>
+
+  <body>
+
+      <div class="container" >
+          <div class="row">
+              <div class="col-md-4">
+                  <div class="navbar-header">
+                      <div> <a class="navbar-text" href="#about">LOGO</a> </div>
+                  </div>
+              </div>
+              <div class="col-md-2">
+                  <div class="navbar-width"> 
+                      <p class="navbar-text-div"><a href="#about" class="navbar-text">新·启程</a> </p>
+                  </div>
+              </div>
+              <div class="col-md-2">
+                  <div class="navbar-width"> 
+                      <p class="navbar-text-div"><a href="#about" class="navbar-text">心·旅程</a> </p>
+                  </div>
+              </div>
+              <div class="col-md-2">
+                  <div class="navbar-width"> 
+                      <p class="navbar-text-div"><a href="#about" class="navbar-text">欣·秀景</a> </p>
+                  </div>
+              </div>
+              <div class="col-md-2">
+                  <div class="navbar-width"> 
+                      <p class="navbar-text-div"><a href="#about" class="navbar-text">星·资讯</a> </p>
+                  </div>
+              </div>
+          </div>
+      </div>
+    <!-- Begin page content -->
+    <div class="hover panel">
+        <div class="front">
+            <div class="pad">
+                <div style='height: 480px; width:320px; background:red;'> 前面111</div>
+            </div>
+        </div>
+        <div class="back">
+            <div class="pad">
+                 <div style='height: 480px; width:320px; background:yellow;'> <a title="private" href="http://www.baidu.com" target="view_window">Click me! Go Baidu</a></div>
+            </div>
+        </div>
+    </div>
+    <div class="hover panel">
+        <div class="front">
+            <div class="pad">
+                <div style='height: 480px; width:320px; background:red;'> 前面222</div>
+            </div>
+        </div>
+        <div class="back">
+            <div class="pad">
+                 <div style='height: 480px; width:320px; background:yellow;'> <a title="private" href="http://www.baidu.com" target="view_window">Click me! Go Baidu</a></div>
+            </div>
+        </div>
+    </div>
+    <div class="hover panel">
+        <div class="front">
+            <div class="pad">
+                <div style='height: 480px; width:320px; background:red;'> 前面333</div>
+            </div>
+        </div>
+        <div class="back">
+            <div class="pad">
+                 <div style='height: 480px; width:320px; background:yellow;'> <a title="private" href="http://www.baidu.com" target="view_window">Click me! Go Baidu</a></div>
+            </div>
+        </div>
+    </div>
+    <!--#include file="footer.html"-->
