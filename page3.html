@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Sticky Footer Navbar Template for Bootstrap</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/sticky-footer-navbar.css" rel="stylesheet">
+    <link href="css/lightbox.css" rel="stylesheet" />
+    <style>
+    .navbar-width {
+        width:188px;
+        height:120px;
+        background:#00AEEB;
+    } 
+    .navbar-header {
+        width:380px;
+        height:120px;
+        background:#00AEEB;
+    } 
+    .navbar-text-div {
+        padding-top:73px;
+        padding-left:63px;
+    } 
+    .navbar-text {
+        color: #FFFFFF;
+        font-size: larger;
+    } 
+    .container_wf{position:relative; width:1081px; margin:0 auto;}
+    .ks-waterfall{
+        position:absolute;
+        width:330px;
+        overflow:hidden;
+        padding:15px;
+        border:2px solid #DDD;
+        margin-bottom:20px;
+        text-align:center;
+        left:-9999px;
+        top:-9999px;
+    }
+    </style>
+
+  </head>
+
+  <body>
+      <div class="container" >
+          <div class="row">
+              <div class="col-md-4">
+                  <div class="navbar-header">
+                      <div> <a class="navbar-text" href="#about">LOGO</a> </div>
+                  </div>
+              </div>
+              <div class="col-md-2">
+                  <div class="navbar-width"> 
+                      <p class="navbar-text-div"><a href="#about" class="navbar-text">新·启程</a> </p>
+                  </div>
+              </div>
+              <div class="col-md-2">
+                  <div class="navbar-width"> 
+                      <p class="navbar-text-div"><a href="#about" class="navbar-text">心·旅程</a> </p>
+                  </div>
+              </div>
+              <div class="col-md-2">
+                  <div class="navbar-width"> 
+                      <p class="navbar-text-div"><a href="#about" class="navbar-text">欣·秀景</a> </p>
+                  </div>
+              </div>
+              <div class="col-md-2">
+                  <div class="navbar-width"> 
+                      <p class="navbar-text-div"><a href="#about" class="navbar-text">星·资讯</a> </p>
+                  </div>
+              </div>
+          </div>
+      </div>
+    <!-- Begin page content -->
+    <div class="container">
+        <div id="container_wf" class="container_wf">
+            <div ng-app="" ng-controller="picController">
+                <div class="ks-waterfall" ng-repeat="x in picList">
+                    <a href="image/s_{{x}}.jpg" data-lightbox="image-{{x}}" data-title="描述性文字">
+                        <img src="image/s_{{x}}.jpg" width=290>
+                        <div class="title">描述性文字</div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--#include file="footer.html"-->
