@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Sticky Footer Navbar Template for Bootstrap</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/sticky-footer-navbar.css" rel="stylesheet">
+    
+    <style>
+	    body 
+		{ 
+			background: url(image/bg_photo.jpg) no-repeat center center fixed;
+    	    -webkit-background-size: cover;
+    	    -moz-background-size: cover;
+    	    -o-background-size: cover;
+    	    background-size: cover;
+		}
+		body > .container {
+	  		padding: 0% 5% 0%;
+		}
+		
+	    .navbar-width {
+	        width:115%;
+	        height:120px;
+	        background:#20AFFC;
+	    } 
+	    .navbar-header {
+	    
+	        width:107%;
+	        height:120px;
+	        background:#20AFFC;
+	     
+	    } 
+	    .navbar-text-div {
+	        padding-top:40%;
+	        padding-left:25%;
+	    } 
+	    .navbar-text {
+	        color: #FFFFFF;
+	        font-size: 100%;
+	        font-weight:bold;
+	    }
+	    #navbar4:hover {
+	    	background:#BBE70D;
+	    }
+	    .rgba {
+	 		background: rgb(113, 68, 247); /*The Fallback color,这里也可以使用一张图片来代替*/
+	  		background: rgba(113, 68, 247,0.3);
+	  		-ms-filter: "progid:DXImageTransform.Microsoft.gradient(GradientType=1,startColorstr=#80000000,endColorstr=#80000000)"; /*Filter for IE8 */    
+	  		filter: progid:DXImageTransform.Microsoft.gradient(GradientType=1,startColorstr=#80000000, endColorstr=#80000000); /*Filter for older IEs */
+	 	}
+	 	.list-group-item{
+	 		background-color:transparent;
+	 		border:0px;
+	 		
+	 	}
+	 	a.list-group-item:hover {
+	 		background:#422AAB;
+	 		color:#fff;
+	 	}
+	 	a.list-group-item{
+	 		color:#fff;
+	 	}
+	 	:after, :before{
+	 		background-color:transparent;
+	 	}
+    </style>
+    
+    <script src="js/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+        	$("#nav_title4").click(function(){
+        		//$("#navbar4").style.backgroundColor='#ff0000';
+				alert("haha");
+
+       		});
+        	$(".list-group-item").click(function(){
+        		  this.css("background","#422AAB");
+        		  this.css("color","#fff");
+        	});
+       	});
+    </script>
+        
+</head>
+
+<body>
+	<div class="container" >
+		<div class="row">
+			<div class="col-md-4">
+				<div class="navbar-header">
+					<img src="image/nav_01.jpg" height=100% width=100%;/>
+				</div>
+			</div>
+			<div class="col-md-2">
+				<div class="navbar-width"> 
+					<p class="navbar-text-div"><a href="#about" class="navbar-text">新·启程</a> </p>
+				</div>
+			</div>
+			<div class="col-md-2">
+				<div class="navbar-width"> 
+					<p class="navbar-text-div"><a href="#about" class="navbar-text">心·旅程</a> </p>
+				</div>
+			</div>
+			<div class="col-md-2">
+				<div class="navbar-width"> 
+					<p class="navbar-text-div"><a href="#about" class="navbar-text">欣·秀景</a> </p>
+				</div>
+			</div>
+			<div class="col-md-2">
+				<div class="navbar-width" id="navbar4"> 
+ 					<p class="navbar-text-div"><a href="#about" class="navbar-text" id="nav_title4">星·资讯</a> </p>
+				</div>
+			</div>
+		</div>
+      
+		<div id="main-content" class="row">
+			<div class="col-md-4">
+				<div id="left-nav" class="rgba" style="float:left;height:450px;width:107%;margin-top:20px;">
+          			<div class="list-group">
+					  <a href="#" class="list-group-item">
+					    Cras justo odio
+					  </a>
+					  <a href="#" class="list-group-item">Dapibus ac facilisis in</a>
+					  <a href="#" class="list-group-item">Morbi leo risus</a>
+					  <a href="#" class="list-group-item">Porta ac consectetur ac</a>
+					  <a href="#" class="list-group-item">Vestibulum at eros</a>
+					</div>
+          		</div>
+          	</div>
+          	<div class="col-md-8">
+	          	<div id="right-content" class="rgba" style="float:right;height:450px;width:103%;margin-top:20px;margin-right:-3%">
+	          	
+	          	</div>
+          	</div>
+		</div>
+	</div>  	
+</body>
+</html>
