@@ -61,6 +61,7 @@
     </style>
     
     <script src="js/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript" src="js/jquery.floatDiv.js"></script>
     <script type="text/javascript">
         $(document).ready(function(){
         	$("#nav_title4").click(function(){
@@ -68,7 +69,12 @@
 				alert("haha");
 
        		});
+            $("#slide_left_bottom").floatdiv({left:"6px",top:"180px"});
+            $("#slide_right_bottom").floatdiv({left:"1240px",top:"440px"});
        	});
+       
+    
+
     </script>
      <script type="text/javascript">
         $(document).ready(function(){
@@ -156,6 +162,9 @@
 </head>
 
 <body>
+<div id="slide_left_bottom" >
+    <div><a title="private" href="http://www.baidu.com" target="view_window"><img src="image/airport.jpg"/></a></div>
+</div>
 	<div class="container" >
 		<div class="row">
 			<div class="col-md-4">
@@ -186,7 +195,7 @@
 		</div>	
 	</div>  	
 <!-- Begin page content -->
-	<div class ="panel_set" style="margin-left: 60px;">
+<div class ="panel_set" style="margin-left: 60px;">
     <div class="hover panel">
         <div class="front">
             <div class="pad">
@@ -248,13 +257,39 @@
         </div>
     </div>
 </div>
-<div class="slide_left_bottom" style=" position: absolute; left: 1240px;top:440px;">
+<div id="slide_right_bottom">
     <div><img src="image/two_dim_code.jpg" /></div>
     <div style="margin-top: 20px;">
-        <img src="image/tel_logo.jpg.jpg" />
+        <img src="image/tel_logo.jpg" />
         <span style="color:white;font-size:150%;">VIP</span>
         <p style="color:white;font-size:120%;">400666888</p>
     </div>
-
 </div>
+
+<!-- 测试悬浮效果代码 -->
+<p>dddd</p>
+<p>dddd</p>
+<p>dddd</p>
+<p>dddd</p>
+<p>dddd</p>
+<p>dddd</p>
+<p>dddd</p>
+<p>dddd</p>
+<p>dddd</p>
+<p>dddd</p>
+<p>dddd</p>
+<p>dddd</p>
+<p>dddd</p>
+<p>dddd</p>
+<p>dddd</p>
+<p>dddd</p>
+<p>dddd</p>
+<p>dddd</p>
+<p>dddd</p>
+<p>dddd</p>
+<p>dddd</p>
+<p>dddd</p>
+<p>dddd</p>
+<p>dddd</p>
+<p>dddd</p>
 <!--#include file="footer.html"-->
