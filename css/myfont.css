@@ -1,0 +1,37 @@
+
+.font-face{
+    font-family : "font_one";
+    src : url{};
+}
+
+.tt1 {
+    font-family : "黑体";
+    font-size : 38px;
+    font-style : normal;
+}
+
+.tt2 {
+    font-family : "黑体";
+    font-size : 24px;
+    font-style : normal;
+}
+
+.tt3 {
+    font-family : "黑体";
+    font-size : 16px;
+    font-style : normal;
+    padding-top : 10px;
+}
+
+/*background : #3B1E86;*/
+.div_alpha {
+    background : rgba(59,30,134,0.5);
+    background :  transparent\9;
+    width : 800px;
+    height : 540px;
+    padding-top : 130px;
+    margin-left : 230px;
+    /*filter:alpha(Opacity=60);*/
+    /*-moz-opacity:0.6;*/
+    /*opacity: 0.6*/
+}
