@@ -27,7 +27,15 @@
 		body > .container {
 	  		padding: 0% 5% 0%;
 		}
-		
+		h3{
+			padding: 0% 5% 0%;
+		}
+		hr{
+			margin: 2% 0% 1% 2%;
+		}
+		p{
+			padding: 2% 10% 2% 5%;
+		}
 	    .navbar-width {
 	        width:115%;
 	        height:120px;
@@ -49,11 +57,16 @@
 	        font-size: 100%;
 	        font-weight:bold;
 	    }
+		/*
 	    #navbar4:hover {
 	    	background:#BBE70D;
 	    }
+		*/
+		#navbar4{
+			background:#BBE70D;
+		}
 	    .rgba {
-	 		background: rgb(113, 68, 247); /*The Fallback color,这里也可以使用一张图片来代替*/
+	 		background: rgb(113, 68, 247); /*The Fallback color,这里可以使用一张图片来代替*/
 	  		background: rgba(113, 68, 247,0.3);
 	  		-ms-filter: "progid:DXImageTransform.Microsoft.gradient(GradientType=1,startColorstr=#80000000,endColorstr=#80000000)"; /*Filter for IE8 */    
 	  		filter: progid:DXImageTransform.Microsoft.gradient(GradientType=1,startColorstr=#80000000, endColorstr=#80000000); /*Filter for older IEs */
@@ -73,6 +86,21 @@
 	 	:after, :before{
 	 		background-color:transparent;
 	 	}
+	 	
+	 	.right-content {
+	 		margin-left:30px;
+	 		margin-top:30px;
+	 		color:white;
+	 		display:none;
+	 	}
+		.left-footer{
+			color:#fff;
+			margin-left:5%;
+		}
+		.right-footer{
+			color:#fff;
+			float:right;
+		}
     </style>
     
     <script src="js/jquery-1.11.2.min.js"></script>
@@ -83,10 +111,21 @@
 				alert("haha");
 
        		});
-        	$(".list-group-item").click(function(){
-        		  this.css("background","#422AAB");
-        		  this.css("color","#fff");
+        	
+        	
+        	// add
+        	$(".list-group a").each(function(i){
+        		$(this).click(function(){
+        			$(this).css("background","#422AAB");
+            		$(this).css("color","#fff");
+            		$(".list-group a:gt(" + i + ")").css("background", "transparent");
+            		$(".list-group a:lt(" + i + ")").css("background", "transparent");
+            		$divList = $("#right-content").children("div");
+            	    $divList.hide(); 
+            	    $divList.eq(i).show();
+            	});
         	});
+        	
        	});
     </script>
         
@@ -126,21 +165,93 @@
 			<div class="col-md-4">
 				<div id="left-nav" class="rgba" style="float:left;height:450px;width:107%;margin-top:20px;">
           			<div class="list-group">
-					  <a href="#" class="list-group-item">
-					    Cras justo odio
-					  </a>
-					  <a href="#" class="list-group-item">Dapibus ac facilisis in</a>
-					  <a href="#" class="list-group-item">Morbi leo risus</a>
-					  <a href="#" class="list-group-item">Porta ac consectetur ac</a>
-					  <a href="#" class="list-group-item">Vestibulum at eros</a>
+					  <a href="#" class="list-group-item">旅游小贴士</a>
+					  <a href="#" class="list-group-item">旅游小贴士旅游小贴士旅游小贴士</a>
+					  <a href="#" class="list-group-item">旅游小贴士旅游小贴士</a>
+					  <a href="#" class="list-group-item">旅游小贴士旅旅游小贴士游小</a>
+					  <a href="#" class="list-group-item">旅游小贴士旅旅游小贴</a>
+					  <a href="#" class="list-group-item">旅游小贴士</a>
 					</div>
           		</div>
           	</div>
           	<div class="col-md-8">
 	          	<div id="right-content" class="rgba" style="float:right;height:450px;width:103%;margin-top:20px;margin-right:-3%">
-	          	
+	          		<div class="right-content">
+	          			<h3>旅游小贴士1111</h3>
+	          			<p>旅游小贴士1旅游小贴士1旅游小贴士旅游小贴士旅游小贴士旅游小贴士旅游小贴士
+						旅游小贴士旅游小贴士旅游小贴士旅游小贴士旅游小贴士旅游小贴士旅游小贴士旅游小贴士
+						旅游小贴士旅游小贴士旅游小贴士旅游小贴士旅游小贴士旅游小贴士旅游小贴士旅游小贴士
+						旅游小贴士旅游小贴士旅游小贴士旅游小贴士旅游小贴士旅游小贴士旅游小贴士旅游小贴士
+						旅游小贴士旅游小贴士旅游小贴士</p>
+	          		</div>
+	          		<div class="right-content">
+	          			<h3>旅游小贴士2222</h3>
+	          			<p>旅游小贴士2旅游小贴士2旅游小贴士旅游小贴士旅游小贴士旅游小贴士旅游小贴士
+						旅游小贴士旅游小贴士旅游小贴士旅游小贴士旅游小贴士旅游小贴士旅游小贴士旅游小贴士
+						旅游小贴士旅游小贴士旅游小贴士旅游小贴士旅游小贴士旅游小贴士旅游小贴士旅游小贴士旅游小贴士</p>
+	          		</div>
+	          		<div class="right-content">
+	          			<h3>旅游小贴士3333</h3>
+	          			<p>旅游小贴士3旅游小贴士3旅游小贴士旅游小贴士旅游小贴士旅游小贴士旅游小贴士
+						旅游小贴士旅游小贴士旅游小贴士旅游小贴士旅游小贴士旅游小贴士旅游小贴士旅游小贴士
+						旅游小贴士旅游小贴士旅游小贴士旅游小贴士旅游小贴士旅游小贴士旅游小贴士旅游小贴士
+						旅游小贴士旅游小贴士旅游小贴士旅游小贴士旅游小贴士旅游小贴士旅游小贴士旅游小贴士旅游小贴士旅游小贴士
+						</p>
+	          		</div>
+					<div class="right-content">
+	          			<h3>旅游小贴士4444</h3>
+	          			<p>旅游小贴士4旅游小贴士4旅游小贴士4旅游小贴士4旅游小贴士4旅游小贴士4旅游小贴士4
+						旅游小贴士4旅游小贴士4旅游小贴士4旅游小贴士4旅游小贴士4旅游小贴士4旅游小贴士4
+						旅游小贴士4旅游小贴士4旅游小贴士4旅游小贴士4旅游小贴士4旅游小贴士4旅游小贴士4
+						旅游小贴士旅游小贴士旅游小贴士旅游小贴士旅游小贴士</p>
+	          		</div>
+					<div class="right-content">
+	          			<h3>旅游小贴士5555</h3>
+	          			<p>旅游小贴士5旅游小贴士5旅游小贴士5旅游小贴士5旅游小贴士5旅游小贴士5旅游小贴士5
+						旅游小贴士5旅游小贴士5旅游小贴士5旅游小贴士5旅游小贴士5旅游小贴士5旅游小贴士5
+						旅游小贴士5旅游小贴士5旅游小贴士5旅游小贴士5旅游小贴士5旅游小贴士5旅游小贴士
+						旅游小贴士5旅游小贴士5旅游小贴士5旅游小贴士5旅游小贴士旅游小贴士旅游小贴士旅游小贴士
+						旅游小贴士旅游小贴士旅游小贴士旅游小贴士旅游小贴士旅游小贴士旅游小贴士旅游小贴士旅游小贴士
+						旅游小贴士旅游小贴士旅游小贴士旅游小贴士旅游小贴士旅游小贴士旅游小贴士旅游小贴士
+						旅游小贴士旅游小贴士旅游小贴士旅游小贴士旅游小贴士旅游小贴士旅游小贴士旅游小贴士旅游小贴士旅游小贴士旅游小贴士
+						旅游小贴士旅游小贴士旅游小贴士旅游小贴士旅游小贴士旅游小贴士旅游小贴士旅游小贴士旅游小贴士
+						旅游小贴士旅游小贴士旅游小贴士旅游小贴士旅游小贴士旅游小贴士旅游小贴士旅游小贴士
+						旅游小贴士旅游小贴士旅游小贴士旅游小贴士旅游小贴士旅游小贴士</p>
+	          		</div>
+					<div class="right-content">
+	          			<h3>旅游小贴士6666</h3>
+	          			<p>旅游小贴士66旅游小贴士66旅游小贴士66旅游小贴士66旅游小贴士66旅游小贴士66旅游小贴士66
+						旅游小贴士66旅游小贴士66旅游小贴士66旅游小贴士66旅游小贴士66旅游小贴士66旅游小贴士66旅游小贴士
+						旅游小贴士66旅游小贴士66旅游小贴士66旅游小贴士66旅游小贴士66旅游小贴士66旅游小贴士66旅游小贴士66
+						旅游小贴士旅游小贴士旅游小贴士旅游小贴士</p>
+	          		</div>
 	          	</div>
           	</div>
+		</div>
+		<div id="footer" class="row">
+			<hr>
+			<div class="row">
+				<div class="col-md-6">				
+					<div class="left-footer">
+					浙江威航国际旅行社有限公司<br/>
+					Zhejiang Willhan International Travel Service Co.Ltd.
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="right-footer">
+					<span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>
+					杭州市滨江区江陵路1780号百得利大厦602室
+					<div class="row">
+					<div class="col-md-6">
+					<span class="glyphicon glyphicon-earphone" aria-hidden="true"></span>
+					0571-8688 5080</div>
+					<div class="col-md-6">
+					<span class="glyphicon glyphicon-print" aria-hidden="true"></span>
+					0571-8688 0752</div>
+					</div>
+					</div>
+				</div>
+			</div>
 		</div>
 	</div>  	
 </body>
