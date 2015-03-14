@@ -18,7 +18,7 @@
     <style>
 	    body 
 		{ 
-			background: url(image/bg_photo.jpg) no-repeat center center fixed;
+			background: url(image/bg_pic.jpg) no-repeat center center fixed;
     	    -webkit-background-size: cover;
     	    -moz-background-size: cover;
     	    -o-background-size: cover;
@@ -36,6 +36,9 @@
 		p{
 			padding: 2% 10% 2% 5%;
 		}
+		a:hover{
+			text-decoration: none;
+		}
 	    .navbar-width {
 	        width:115%;
 	        height:120px;
@@ -49,19 +52,15 @@
 	     
 	    } 
 	    .navbar-text-div {
+			position:absolute;
 	        padding-top:40%;
 	        padding-left:25%;
-	    } 
+	    }
 	    .navbar-text {
 	        color: #FFFFFF;
 	        font-size: 100%;
 	        font-weight:bold;
 	    }
-		/*
-	    #navbar4:hover {
-	    	background:#BBE70D;
-	    }
-		*/
 		#navbar4{
 			background:#BBE70D;
 		}
@@ -72,26 +71,28 @@
 	  		filter: progid:DXImageTransform.Microsoft.gradient(GradientType=1,startColorstr=#80000000, endColorstr=#80000000); /*Filter for older IEs */
 	 	}
 	 	.list-group-item{
-	 		background-color:transparent;
-	 		border:0px;
-	 		
-	 	}
+	 		background:transparent;
+			background-color:transparent;
+	 		border:none; 		
+	 	}    
+		a.list-group-item{
+			background:transparent;
+	 		border:none;
+			color:#fff;
+		}
 	 	a.list-group-item:hover {
 	 		background:#422AAB;
 	 		color:#fff;
 	 	}
-	 	a.list-group-item{
-	 		color:#fff;
-	 	}
 	 	:after, :before{
-	 		background-color:transparent;
-	 	}
-	 	
+	 		background:transparent;
+	 	} 	
 	 	.right-content {
-	 		margin-left:30px;
-	 		margin-top:30px;
+	 		margin-left:3%;
+	 		margin-top:3%;
 	 		color:white;
 	 		display:none;
+			float:right;
 	 	}
 		.left-footer{
 			color:#fff;
@@ -105,24 +106,49 @@
     
     <script src="js/jquery-1.11.2.min.js"></script>
     <script type="text/javascript">
-        $(document).ready(function(){
-        	$("#nav_title4").click(function(){
-        		//$("#navbar4").style.backgroundColor='#ff0000';
-				alert("haha");
-
-       		});
-        	
-        	
-        	// add
+        function refresh()
+		{
+			$("a.list-group-item").css("background","transparent");
+			$("a.list-group-item").css("color","#fff");
+			$("a.list-group-item").css("border","none");
+		}
+		$(document).ready(function(){
+			
+			// add
         	$(".list-group a").each(function(i){
+				
         		$(this).click(function(){
         			$(this).css("background","#422AAB");
             		$(this).css("color","#fff");
-            		$(".list-group a:gt(" + i + ")").css("background", "transparent");
-            		$(".list-group a:lt(" + i + ")").css("background", "transparent");
-            		$divList = $("#right-content").children("div");
+					$(this).css("border","none");
+					$(".list-group a:gt(" + i + ")").each(function(){
+						$(this).mouseover(function(){
+							$(this).css("background","#422AAB");
+						})
+						.mouseout(function(){
+							$(this).css("background","transparent");
+						});
+						$(this).css("background", "transparent");
+					});
+					
+					$(".list-group a:lt(" + i + ")").each(function(){
+						$(this).mouseover(function(){
+							$(this).css("background","#422AAB");
+						})
+						.mouseout(function(){
+							$(this).css("background","transparent");
+						});
+						$(this).css("background", "transparent");
+					});
+			
+					$(this).mouseout(function(){		
+						$(this).css("background","#422AAB");
+					});
+					
+            		$divList = $("#right-nav").children("div");
             	    $divList.hide(); 
             	    $divList.eq(i).show();
+					
             	});
         	});
         	
@@ -131,7 +157,7 @@
         
 </head>
 
-<body>
+<body onload="refresh()">
 	<div class="container" >
 		<div class="row">
 			<div class="col-md-4">
@@ -163,9 +189,9 @@
       
 		<div id="main-content" class="row">
 			<div class="col-md-4">
-				<div id="left-nav" class="rgba" style="float:left;height:450px;width:107%;margin-top:20px;">
+				<div id="left-nav" class="rgba" style="float:left;height:450px;width:107%;margin-top:6%;">
           			<div class="list-group">
-					  <a href="#" class="list-group-item">旅游小贴士</a>
+					  <a href="#" class="list-group-item" id="111">旅游小贴士</a>
 					  <a href="#" class="list-group-item">旅游小贴士旅游小贴士旅游小贴士</a>
 					  <a href="#" class="list-group-item">旅游小贴士旅游小贴士</a>
 					  <a href="#" class="list-group-item">旅游小贴士旅旅游小贴士游小</a>
@@ -175,7 +201,7 @@
           		</div>
           	</div>
           	<div class="col-md-8">
-	          	<div id="right-content" class="rgba" style="float:right;height:450px;width:103%;margin-top:20px;margin-right:-3%">
+	          	<div id="right-nav" class="rgba" style="float:right;height:450px;width:103%;margin-top:3%;margin-right:-3%">
 	          		<div class="right-content">
 	          			<h3>旅游小贴士1111</h3>
 	          			<p>旅游小贴士1旅游小贴士1旅游小贴士旅游小贴士旅游小贴士旅游小贴士旅游小贴士
