@@ -1,0 +1,427 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Sticky Footer Navbar Template for Bootstrap</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/sticky-footer-navbar.css" rel="stylesheet">
+    <style>
+	    body 
+		{ 
+			background: url(image/bg_pic.jpg) no-repeat center center fixed;
+    	    -webkit-background-size: cover;
+    	    -moz-background-size: cover;
+    	    -o-background-size: cover;
+    	    background-size: cover;
+		}
+		body > .container {
+	  		padding: 0% 5% 0%;
+		}
+		h3{
+			padding: 0% 7% 2%;
+			font-family:SimHei;
+		}
+		hr{
+			margin: 2% 0% 1% 2%;
+		}
+		.day{
+			padding: 0% 14% 0% 7%;
+			font-family:SimHei;
+		}
+		.datalist{
+			padding: 0% 14% 0% 7%;
+			font-family:NSimSun;
+		}
+	    .navbar-width {
+	        width:115%;
+	        height:120px;
+	        background:#20AFFC;
+	    } 
+	    .navbar-header {
+	    
+	        width:107%;
+	        height:120px;
+	        background:#20AFFC;
+	     
+	    } 
+	    .navbar-text-div {
+			position:absolute;
+	        padding-top:40%;
+	        padding-left:25%;
+	    } 
+	    .navbar-text {
+	        color: #FFFFFF;
+	        font-size: 100%;
+	        font-weight:bold;
+	    }
+		/*
+	    #navbar4:hover {
+	    	background:#BBE70D;
+	    }
+		*/
+		#navbar2{
+			background:#BBE70D;
+		}
+	    .rgba {
+	 		background: rgb(113, 68, 247); /*The Fallback color,可以使用一张图片来代替*/
+	  		background: rgba(113, 68, 247,0.3);
+	  		-ms-filter: "progid:DXImageTransform.Microsoft.gradient(GradientType=1,startColorstr=#80000000,endColorstr=#80000000)"; /*Filter for IE8 */    
+	  		filter: progid:DXImageTransform.Microsoft.gradient(GradientType=1,startColorstr=#80000000, endColorstr=#80000000); /*Filter for older IEs */
+	 	}
+		div.list-group div{
+			overflow:hidden;
+		}
+		.list-group div span{
+			background-color:transparent;
+	 		border:0px;
+			font-family:NSimSun;
+			color:#fff;	
+			display: block;
+			padding: 3% 6%;
+			margin-bottom: -1%;
+			background:url(image/expanded.gif) no-repeat 10px center;
+			cursor:pointer;
+		}
+		.list-group div.collapsed{height:40px;}
+		.list-group div.collapsed span{background-image:url(image/collapsed.gif);}
+		.list-group div a{
+			background-color:transparent;
+	 		border:0px;
+			font-family:NSimSun;
+			color:#fff;	
+			display: block;
+			padding: 2% 9%;
+			margin-bottom: -1%;
+			text-decoration: none;
+		}
+		.list-group div a:hover {
+	 		background:#422AAB;
+	 		color:#fff;
+			text-decoration: none;
+	 	}
+		
+	 	:after, :before{
+	 		background-color:transparent;
+			text-decoration: none;
+	 	}
+	 	
+	 	.right-content {
+	 		margin-left:30px;
+	 		margin-top:30px;
+	 		color:white;
+	 		display:none;
+	 	}
+		.left-footer{
+			color:#fff;
+			margin-left:5%;
+		}
+		.right-footer{
+			color:#fff;
+			float:right;
+		}
+    </style>
+    
+    <script src="js/jquery-1.11.2.min.js"></script>
+	<script src="js/left-list.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+			var leftList;
+			leftList = new LList("left_list");
+			leftList.init();
+			/*
+			$(".list-group div a").each(function(i){
+				$(this).hide();
+			});
+			
+        	$("#nav_title4").click(function(){
+        		//$("#navbar4").style.backgroundColor='#ff0000';
+				alert("haha");
+
+       		});
+        	*/   	
+        	// add
+        	$(".list-group div a").each(function(i){
+        		$(this).click(function(){
+        			$(this).css("background","#422AAB");
+            		$(this).css("color","#fff");
+            		$(".list-group a:gt(" + i + ")").css("background", "transparent");
+            		$(".list-group a:lt(" + i + ")").css("background", "transparent");
+            		$divList = $("#right-content").children("div");
+            	    $divList.hide(); 
+            	    $divList.eq(i).show();
+            	});
+        	});
+        	
+       	});
+    </script>
+        
+</head>
+
+<body>
+	<div class="container" >
+		<div class="row">
+			<div class="col-md-4">
+				<div class="navbar-header">
+					<img src="image/nav_01.jpg" height=100% width=100%;/>
+				</div>
+			</div>
+			<div class="col-md-2">
+				<div class="navbar-width"> 
+					<p class="navbar-text-div"><a href="#about" class="navbar-text">新·启程</a> </p>
+				</div>
+			</div>
+			<div class="col-md-2">
+				<div class="navbar-width" id="navbar2"> 
+					<p class="navbar-text-div"><a href="#about" class="navbar-text">心·旅程</a> </p>
+				</div>
+			</div>
+			<div class="col-md-2">
+				<div class="navbar-width"> 
+					<p class="navbar-text-div"><a href="#about" class="navbar-text">欣·秀景</a> </p>
+				</div>
+			</div>
+			<div class="col-md-2">
+				<div class="navbar-width" id="navbar4"> 
+ 					<p class="navbar-text-div"><a href="#about" class="navbar-text" id="nav_title4">星·资讯</a> </p>
+				</div>
+			</div>
+		</div>
+      
+		<div id="main-content" class="row">
+			<div class="col-md-4">
+				<div id="left-nav" class="rgba" style="float:left;height:450px;width:107%;margin-top:20px;">
+          			<div id ="left_list" class="list-group">
+						<div class="collapsed">
+							<span>深海游1</span>
+							<a href="#">德国南部深海游</a>
+							<a href="#">旅游线路旅游线路旅游线路</a>
+							<a href="#">旅游线路旅游线路</a>
+							<a href="#">旅游线路</a>
+							<a href="#">旅游线路旅游线路</a>
+							<a href="#">旅游线路旅游线路旅游线路</a>
+						</div>
+						<div class="collapsed">
+							<span>深海游2</span>
+						</div>
+						<div class="collapsed">
+							<span>深海游3</span>
+						</div>
+						<div class="collapsed">
+							<span>深海游4</span>
+						</div>
+						<div class="collapsed">
+							<span>深海游5</span>
+						</div>
+					</div>
+          		</div>
+          	</div>
+          	<div class="col-md-8">
+	          	<div id="right-content" class="rgba" style="float:right;height:450px;width:103%;margin-top:20px;margin-right:-3%">
+	          		<div class="right-content">
+	          			<h3>德国南部深海游</h3>
+						<div class="day">
+						第 1 天：
+						</div>
+						<div class="datalist">
+						上海/法兰克福<br>
+						乘坐汉莎国际航空公司豪华客机直飞欧洲金融首都-法兰克福，抵达后入住酒店休息调整；<br>
+						航 班 号: LH729  1315/1855
+						</div>
+						<div class="day">
+						第 2 天：
+						</div>
+						<div class="datalist">
+						法兰克福-陶博河上罗滕堡-海德堡（预计130公里/预计180公里）<br>					早餐后，乘坐游览德国浪漫城市的代名词-罗腾堡，这里有"中世纪之宝"的美誉。
+						步行进入古镇，镇内城墙环绕，完整地保留着中世纪风情的市政建筑、教堂民宅、碎石铺就的街道，
+						处处洋溢着浓郁的浪漫气息。位于市中心广场的市政厅大楼建于14世纪，始建时为哥特式建筑风格，
+						而最后落成时却是文艺复兴风格。如果站在城堡围墙上，古城风貌尽收眼底，还可以一览陶博河谷美景。
+						之后乘车前往德国最古老的大学城-海德堡。
+						</div>
+						<div class="day">
+						第 3 天：
+						</div>
+						<div class="datalist">
+						海德堡-滴滴湖-弗莱堡（预计216公里/预计30公里）<br>
+						早餐后，乘车前往以盛产布谷鸟钟而闻名的滴滴湖。滴滴湖为德国
+						</div>
+	          		</div>
+	          		<div class="right-content">
+	          			<h3>出国游2222</h3>
+	          			<div class="day">
+						第 1 天：
+						</div>
+						<div class="datalist">
+						上海/法兰克福<br>
+						乘坐汉莎国际航空公司豪华客机直飞欧洲金融首都-法兰克福，抵达后入住酒店休息调整；<br>
+						航 班 号: LH729  1315/1855
+						</div>
+						<div class="day">
+						第 2 天：
+						</div>
+						<div class="datalist">
+						法兰克福-陶博河上罗滕堡-海德堡（预计130公里/预计180公里）<br>					早餐后，乘坐游览德国浪漫城市的代名词-罗腾堡，这里有"中世纪之宝"的美誉。
+						步行进入古镇，镇内城墙环绕，完整地保留着中世纪风情的市政建筑、教堂民宅、碎石铺就的街道，
+						处处洋溢着浓郁的浪漫气息。位于市中心广场的市政厅大楼建于14世纪，始建时为哥特式建筑风格，
+						而最后落成时却是文艺复兴风格。如果站在城堡围墙上，古城风貌尽收眼底，还可以一览陶博河谷美景。
+						之后乘车前往德国最古老的大学城-海德堡。
+						</div>
+						<div class="day">
+						第 3 天：
+						</div>
+						<div class="datalist">
+						海德堡-滴滴湖-弗莱堡（预计216公里/预计30公里）<br>
+						早餐后，乘车前往以盛产布谷鸟钟而闻名的滴滴湖。滴滴湖为德国
+						</div>
+	          		</div>
+	          		<div class="right-content">
+	          			<h3>出国游3333</h3>
+	          			<div class="day">
+						第 1 天：
+						</div>
+						<div class="datalist">
+						上海/法兰克福<br>
+						乘坐汉莎国际航空公司豪华客机直飞欧洲金融首都-法兰克福，抵达后入住酒店休息调整；<br>
+						航 班 号: LH729  1315/1855
+						</div>
+						<div class="day">
+						第 2 天：
+						</div>
+						<div class="datalist">
+						法兰克福-陶博河上罗滕堡-海德堡（预计130公里/预计180公里）<br>					早餐后，乘坐游览德国浪漫城市的代名词-罗腾堡，这里有"中世纪之宝"的美誉。
+						步行进入古镇，镇内城墙环绕，完整地保留着中世纪风情的市政建筑、教堂民宅、碎石铺就的街道，
+						处处洋溢着浓郁的浪漫气息。位于市中心广场的市政厅大楼建于14世纪，始建时为哥特式建筑风格，
+						而最后落成时却是文艺复兴风格。如果站在城堡围墙上，古城风貌尽收眼底，还可以一览陶博河谷美景。
+						之后乘车前往德国最古老的大学城-海德堡。
+						</div>
+						<div class="day">
+						第 3 天：
+						</div>
+						<div class="datalist">
+						海德堡-滴滴湖-弗莱堡（预计216公里/预计30公里）<br>
+						早餐后，乘车前往以盛产布谷鸟钟而闻名的滴滴湖。滴滴湖为德国
+						</div>
+	          		</div>
+					<div class="right-content">
+	          			<h3>出国游4444</h3>
+	          			<div class="day">
+						第 1 天：
+						</div>
+						<div class="datalist">
+						上海/法兰克福<br>
+						乘坐汉莎国际航空公司豪华客机直飞欧洲金融首都-法兰克福，抵达后入住酒店休息调整；<br>
+						航 班 号: LH729  1315/1855
+						</div>
+						<div class="day">
+						第 2 天：
+						</div>
+						<div class="datalist">
+						法兰克福-陶博河上罗滕堡-海德堡（预计130公里/预计180公里）<br>					早餐后，乘坐游览德国浪漫城市的代名词-罗腾堡，这里有"中世纪之宝"的美誉。
+						步行进入古镇，镇内城墙环绕，完整地保留着中世纪风情的市政建筑、教堂民宅、碎石铺就的街道，
+						处处洋溢着浓郁的浪漫气息。位于市中心广场的市政厅大楼建于14世纪，始建时为哥特式建筑风格，
+						而最后落成时却是文艺复兴风格。如果站在城堡围墙上，古城风貌尽收眼底，还可以一览陶博河谷美景。
+						之后乘车前往德国最古老的大学城-海德堡。
+						</div>
+						<div class="day">
+						第 3 天：
+						</div>
+						<div class="datalist">
+						海德堡-滴滴湖-弗莱堡（预计216公里/预计30公里）<br>
+						早餐后，乘车前往以盛产布谷鸟钟而闻名的滴滴湖。滴滴湖为德国
+						</div>
+	          		</div>
+					<div class="right-content">
+	          			<h3>出国游5555</h3>
+	          			<div class="day">
+						第 1 天：
+						</div>
+						<div class="datalist">
+						上海/法兰克福<br>
+						乘坐汉莎国际航空公司豪华客机直飞欧洲金融首都-法兰克福，抵达后入住酒店休息调整；<br>
+						航 班 号: LH729  1315/1855
+						</div>
+						<div class="day">
+						第 2 天：
+						</div>
+						<div class="datalist">
+						法兰克福-陶博河上罗滕堡-海德堡（预计130公里/预计180公里）<br>					早餐后，乘坐游览德国浪漫城市的代名词-罗腾堡，这里有"中世纪之宝"的美誉。
+						步行进入古镇，镇内城墙环绕，完整地保留着中世纪风情的市政建筑、教堂民宅、碎石铺就的街道，
+						处处洋溢着浓郁的浪漫气息。位于市中心广场的市政厅大楼建于14世纪，始建时为哥特式建筑风格，
+						而最后落成时却是文艺复兴风格。如果站在城堡围墙上，古城风貌尽收眼底，还可以一览陶博河谷美景。
+						之后乘车前往德国最古老的大学城-海德堡。
+						</div>
+						<div class="day">
+						第 3 天：
+						</div>
+						<div class="datalist">
+						海德堡-滴滴湖-弗莱堡（预计216公里/预计30公里）<br>
+						早餐后，乘车前往以盛产布谷鸟钟而闻名的滴滴湖。滴滴湖为德国
+						</div>
+	          		</div>
+					<div class="right-content">
+	          			<h3>出国游6666</h3>
+	          			<div class="day">
+						第 1 天：
+						</div>
+						<div class="datalist">
+						上海/法兰克福<br>
+						乘坐汉莎国际航空公司豪华客机直飞欧洲金融首都-法兰克福，抵达后入住酒店休息调整；<br>
+						航 班 号: LH729  1315/1855
+						</div>
+						<div class="day">
+						第 2 天：
+						</div>
+						<div class="datalist">
+						法兰克福-陶博河上罗滕堡-海德堡（预计130公里/预计180公里）<br>					早餐后，乘坐游览德国浪漫城市的代名词-罗腾堡，这里有"中世纪之宝"的美誉。
+						步行进入古镇，镇内城墙环绕，完整地保留着中世纪风情的市政建筑、教堂民宅、碎石铺就的街道，
+						处处洋溢着浓郁的浪漫气息。位于市中心广场的市政厅大楼建于14世纪，始建时为哥特式建筑风格，
+						而最后落成时却是文艺复兴风格。如果站在城堡围墙上，古城风貌尽收眼底，还可以一览陶博河谷美景。
+						之后乘车前往德国最古老的大学城-海德堡。
+						</div>
+						<div class="day">
+						第 3 天：
+						</div>
+						<div class="datalist">
+						海德堡-滴滴湖-弗莱堡（预计216公里/预计30公里）<br>
+						早餐后，乘车前往以盛产布谷鸟钟而闻名的滴滴湖。滴滴湖为德国
+						</div>
+	          		</div>
+	          	</div>
+          	</div>
+		</div>
+		<div id="footer" class="row">
+			<hr>
+			<div class="row">
+				<div class="col-md-6">				
+					<div class="left-footer">
+					浙江威航国际旅行社有限公司<br/>
+					Zhejiang Willhan International Travel Service Co.Ltd.
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="right-footer">
+					<span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>
+					杭州市滨江区江陵路1780号百得利大厦602室
+					<div class="row">
+					<div class="col-md-6">
+					<span class="glyphicon glyphicon-earphone" aria-hidden="true"></span>
+					0571-8688 5080</div>
+					<div class="col-md-6">
+					<span class="glyphicon glyphicon-print" aria-hidden="true"></span>
+					0571-8688 0752</div>
+					</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>  	
+</body>
+</html>
